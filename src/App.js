@@ -3,7 +3,7 @@
 function App() {
   return (
     <div className="App">
-      Hello World!
+      New comit lol
     </div>
   );
 }
