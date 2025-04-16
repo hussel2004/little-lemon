@@ -1,0 +1,75 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header img {
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .header-nav {
+    flex: 1; /* Permet à la nav de prendre l'espace restant */
+  }
+  
+  .header-nav ul {
+    display: flex;
+    justify-content: center; /* 💡 Centre les liens */
+    align-items: center;
+    gap:4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .header-nav a:hover {
+    color: #007f5f;
+  }
+  
+  /* ✨ Décalage du lien Login vers la droite */
+  .header-nav ul li:last-child {
+    margin-left:5rem;
+  }
+  
+  /* 🌐 Responsive pour les écrans inférieurs à 768px */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header-nav {
+      width: 100%;
+    }
+  
+    .header-nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+  
+    .header-nav ul li:last-child {
+      margin-left: 0; /* Supprime le décalage sur mobile */
+    }
+  
+    .header-nav a {
+      padding: 0.5rem 0;
+      width: 100%;
+      display: block;
+    }
+  }
+  
