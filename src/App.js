@@ -2,9 +2,12 @@
 
 function App() {
   return (
-    <div className="App">
-      New comit lol
-    </div>
+    <>
+      <Header/>
+      <Main/>
+      <Footer/>
+    </>
+   
   );
 }
 
