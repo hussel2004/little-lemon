@@ -30,10 +30,11 @@ function Main() {
     const submitForm = (formData) => submitAPI(formData);
     return (
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        
+        <Route path="/home" element={<HomePage />} />
         <Route path="/booking-form" element={<BookingForm />} />
         <Route path="/booking-confirmation" element={<ConfirmedBooking X/>} />
-        <Route path="booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
+        <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
       </Routes>
     );
   }
