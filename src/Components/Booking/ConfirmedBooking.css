@@ -1,0 +1,142 @@
+/* === Reset Box Model === */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* === Booking Form Container === */
+  .booking-form {
+    display: flex;
+    justify-content: center;
+    max-width: 60rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* === Input Section === */
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 32rem;
+  }
+  
+  /* === Form Labels === */
+  .input-section label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+  }
+  
+  /* === Inputs and Selects === */
+  .input-section input,
+  .input-section select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s ease;
+  }
+  
+  .input-section input:focus,
+  .input-section select:focus {
+    border-color: #888;
+    outline: none;
+  }
+  
+  /* === Submit Button === */
+  .submit-btn {
+    background-color: #f4ce14;
+    color: #333;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    max-width: 250px;
+    align-self: flex-start;
+  }
+  
+  .submit-btn:hover {
+    background-color: #e6bc0a;
+  }
+  
+  /* === Credit Card Fields === */
+  .credit-card-fields label {
+    margin-top: 0.5rem;
+  }
+  /* PayPal Section */
+
+  
+  .paypal-btn {
+    background-color: #fff;
+    border: 1px solid #0070ba;
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: bold;
+    color: #0070ba;
+    max-width: 300px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .paypal-btn:hover {
+    background-color: #f0f8ff;
+  }
+  
+  .paypal-logo-letter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0070ba;
+    font-family: 'Arial Black', sans-serif;
+  }
+  
+  .paypal-word {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  
+  .paypal-word .pay {
+    color: #02112d; /* Dark blue */
+  }
+  
+  .paypal-word .pal {
+    color: #08b0f8; /* Light blue */
+  }
+  
+  /* === Responsive Layout === */
+  @media (max-width: 768px) {
+    .booking-form {
+      padding: 1.5rem;
+    }
+  
+    .input-section {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .submit-btn {
+      width: 100%;
+      max-width: none;
+    }
+  }
+  .form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  

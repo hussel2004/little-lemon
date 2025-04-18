@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./BookingForm.css";
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
     const [formData, setFormData] = useState({
@@ -13,7 +14,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
-    // Validation logic
     const validate = (fieldValues = formData) => {
         const temp = { ...errors };
 
@@ -32,14 +32,11 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         if ('time' in fieldValues)
             temp.time = fieldValues.time ? "" : "L'heure est requise.";
 
-        setErrors({
-            ...temp,
-        });
+        setErrors({ ...temp });
     };
 
     const handleChange = (e) => {
         const { id, value } = e.target;
-
         const newValue = id === "guests" ? parseInt(value) : value;
 
         setFormData((prev) => ({
@@ -47,7 +44,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             [id]: newValue,
         }));
 
-        // Dispatch la date s'il faut
         if (id === "date") {
             dispatch({ type: "SET_DATE", payload: value });
         }
@@ -94,11 +90,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     };
 
     return (
-        <form
-            style={{ display: "grid", maxWidth: "300px", gap: "20px" }}
-            onSubmit={handleSubmit}
-            noValidate
-        >
+    <>
+        <h1 style={{textAlign:"center"}}>Reservations</h1>
+        <form className="booking-form" onSubmit={handleSubmit} noValidate>
             <label htmlFor="date">Choose date</label>
             <input
                 type="date"
@@ -108,7 +102,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 onBlur={handleBlur}
             />
             {touched.date && errors.date && (
-                <span style={{ color: "red", fontSize: "12px" }}>{errors.date}</span>
+                <span className="error-text">{errors.date}</span>
             )}
 
             <label htmlFor="time">Choose time</label>
@@ -123,7 +117,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 ))}
             </select>
             {touched.time && errors.time && (
-                <span style={{ color: "red", fontSize: "12px" }}>{errors.time}</span>
+                <span className="error-text">{errors.time}</span>
             )}
 
             <label htmlFor="guests">Number of guests</label>
@@ -138,7 +132,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 onBlur={handleBlur}
             />
             {touched.guests && errors.guests && (
-                <span style={{ color: "red", fontSize: "12px" }}>{errors.guests}</span>
+                <span className="error-text">{errors.guests}</span>
             )}
 
             <label htmlFor="occasion">Occasion</label>
@@ -152,15 +146,18 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
                 <option>Anniversary</option>
             </select>
             {touched.occasion && errors.occasion && (
-                <span style={{ color: "red", fontSize: "12px" }}>{errors.occasion}</span>
+                <span className="error-text">{errors.occasion}</span>
             )}
 
             <input
                 type="submit"
                 value="Make Your Reservation"
+                className="submit-btn"
                 disabled={!isFormValid()}
             />
         </form>
+    </>
+        
     );
 }
 
