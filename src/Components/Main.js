@@ -6,7 +6,7 @@ import React,{useState,useReducer} from 'react';
 import { fetchAPI,submitAPI } from '../utils/api';
 import ConfirmedBooking from './Booking/ConfirmedBooking';
 import { updatesTime, initializeTime } from '../utils/bookingUtils';
-
+import MenuPage from './MenuPage';
 
 function Main() {
 
@@ -19,7 +19,7 @@ function Main() {
     const submitForm = (formData) => submitAPI(formData);
     return (
       <Routes>
-        
+        <Route path="/menu" element={<MenuPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/booking-form" element={<BookingForm />} />
         <Route path="/booking-confirmation" element={<ConfirmedBooking X/>} />
