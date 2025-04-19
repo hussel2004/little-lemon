@@ -1,0 +1,69 @@
+/* src/components/Menu.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Markazi+Text:wght@500&display=swap');
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1.5rem;
+  padding: 2rem;
+  font-family: 'Karla', sans-serif;
+}
+
+.category-card {
+  background-color: #fefefe;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.category-title {
+  font-family: 'Markazi Text', serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.item-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.item-price {
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+.item-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.card-buttons button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: 'Karla', sans-serif;
+}
+
+.card-buttons button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
